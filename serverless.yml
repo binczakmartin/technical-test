@@ -1,0 +1,18 @@
+service: technical-test
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: lambda.handler
+    events:
+      - httpApi:
+          path: /on-game-finished
+          method: post
+
+plugins:
+  - serverless-offline
+
