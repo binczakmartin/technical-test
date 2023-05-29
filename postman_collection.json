@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "9c54e6e3-7a0e-4a29-9fe5-a2adedb0f4e3",
+		"name": "virtual_regata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24854997"
+	},
+	"item": [
+		{
+			"name": "[ONLINE] on-game-finished",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"game\": \"S#AS-7S-QS-TS-KH-AH-QH-TH-KC-QC-AC-TC-AD-KD-QD-3D#Marie,Fred,Clément,Bastien\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://yuadeq54kc.execute-api.us-east-1.amazonaws.com/on-game-finished",
+					"protocol": "https",
+					"host": [
+						"yuadeq54kc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"on-game-finished"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[OFFLINE] on-game-finished",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"game\": \"S#AS-KS-QS-TS-KH-AH-QH-TH-KC-QC-AC-TC-AD-KD-QD#Marie,Fred,Clément,Bastien\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/on-game-finished",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"on-game-finished"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
