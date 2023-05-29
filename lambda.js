@@ -7,16 +7,23 @@ export const handler = (event, context, callback) => {
     const error = checkErrors(gameString);
 
     if (error) {
-      console.log(error);
-      callback({ error }, 400);
+      callback(undefined, {
+        statusCode: 400,
+        body: JSON.stringify({
+            message: error
+        })
+      });
     }
 
-    console.log("gameString =>", gameString);
     const result = getGameResult(gameString);
   
-    callback({ result }, 200);
+    callback(undefined, {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: result
+      })
+    });
   } catch (error) {
-    console.log('error', error)
-    callback({ error: error.message }, 500);
+    callback(Error(error));
   }
 };
