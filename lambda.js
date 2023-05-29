@@ -1,10 +1,10 @@
-import { getArgs, getTricksPoint, getResult } from "./src/gameFunctions.js";
-
+import { calculateGameResult } from "./src/game.js";
 export const handler = (event, context, callback) => {
   try {
-    const { playerNames, cards, trump } = getArgs(JSON.parse(event.body));
-    const trickPoints = getTricksPoint(cards, trump);
-    const result = getResult(playerNames, trickPoints);
+    const payload = JSON.parse(event.body)
+
+    console.log("game", payload.game);
+    const result = calculateGameResult(payload.game);
   
     callback({ result }, 200);
   } catch (e) {
